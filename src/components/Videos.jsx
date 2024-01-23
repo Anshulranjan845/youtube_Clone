@@ -4,8 +4,7 @@ import useTimestampdiff from '../hooks/useTimestampdiff';
 import { useSelector } from 'react-redux';
 
 const Videos = ({info}) => {
-  const toggle = useSelector(store=>store.toggle?.toggleView)
-    if(!info) return;
+  const toggle = useSelector(store=>store.toggle?.toggleView);
     const {snippet , statistics } = info;
     const { channelTitle , publishedAt , thumbnails ,title } = snippet;
     const {viewCount } = statistics;

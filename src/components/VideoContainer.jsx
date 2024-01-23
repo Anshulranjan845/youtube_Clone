@@ -13,6 +13,7 @@ const VideoContainer = () => {
    const videos = useSelector(store => store.youtube?.addYoutubeVideo);
 
    if(!videos) return <Shimmer />;
+   console.log(videos);
 
     
   return (

@@ -11,7 +11,7 @@ const SearchPage = () => {
      const queryText = searchParams.get(decodeURIComponent("search_query"));
      useSearchVideos(queryText);
      const searchResult =  useSelector(store=>store.youtube?.searchedVideoList);
-      console.log(searchResult);
+      // console.log(searchResult);
     if(!searchResult) return <h1>Fetching...</h1>
 
 

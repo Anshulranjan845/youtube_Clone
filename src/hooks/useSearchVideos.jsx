@@ -5,14 +5,14 @@ import { addSearchedVideos } from '../utils/youtubeVideoSlice';
 
 const useSearchVideos = (queryText) => {
 
-    const dispatch = useDispatch();
+const dispatch = useDispatch();
 
  useEffect(() =>{
     SearchList();
   },[]);
 
   const SearchList = async()=>{
-      const search = await fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&type=video&q="+queryText+"&key="+YT_API_KEY);
+      const search = await fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&type=video&type=channel&q="+queryText+"&key="+YT_API_KEY);
       const json = await search.json();
       dispatch(addSearchedVideos(json.items));
   }

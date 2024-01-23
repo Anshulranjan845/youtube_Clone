@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { YOUTUBE_CDN_LOGO} from '../utils/Constants'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineVideoCall } from "react-icons/md";
@@ -51,7 +51,7 @@ const Header = () => {
   };
 
   return (
-    <div className='grid grid-flow-col cursor-pointer'>
+    <div className='grid grid-flow-col cursor-pointer sticky top-0 bg-white'>
       <div className='flex flex-row px-4 col-span-2 mr-20'>
         <RxHamburgerMenu 
         onClick={() => hangleToggle()}

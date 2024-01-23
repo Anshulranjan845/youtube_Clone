@@ -8,7 +8,7 @@ function formatViewCount(viewCount) {
     } else if (viewCount >= 1000 && viewCount < 100000) {
       return (viewCount / 1000).toFixed(1) + 'K';
     } else {
-      return viewCount.toString();
+      return viewCount;
     }
   }
 

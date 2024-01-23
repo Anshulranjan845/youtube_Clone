@@ -4,7 +4,7 @@ import { ARR_BUTTON } from '../utils/Constants'
 
 const ButtonList = () => {
   return (
-    <div className='flex flex-row m-2 p-2'>
+    <div className='flex flex-row m-2 p-2 sticky top-16 bg-white'>
     {
         ARR_BUTTON.map((arr , index)=>(<Button key={index} buttonArr={arr}/>))
  

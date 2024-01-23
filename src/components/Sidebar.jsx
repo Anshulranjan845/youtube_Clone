@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { GoHome } from "react-icons/go";
 import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
@@ -21,7 +21,7 @@ const Sidebar = () => {
   if(!toggle) return null;
 
   return (
- <div className='m-2 cursor-pointer'>
+ <div className='m-2 cursor-pointer sticky top-20'>
        <div className='flex flex-row item-center px-2 hover:bg-gray-200 rounded-lg active:bg-black '>
         <Link to={"./Body"}><GoHome className='m-2 text-2xl'/></Link>
        <span className='my-2 mx-4 text-sm  active:text-white' >Home</span>

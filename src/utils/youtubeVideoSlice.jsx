@@ -5,6 +5,9 @@ const youtubeVideoSlice = createSlice({
     initialState: {
         addYoutubeVideo: null,
         searchedVideoList:null,
+        channelVideoList:null,
+        statVideoDetails:null,
+        statSubscriberDetails:null
     },
     reducers:{
        addYoutubeMovie : (state , action) => {
@@ -12,10 +15,21 @@ const youtubeVideoSlice = createSlice({
        },
        addSearchedVideos : (state , action) => {
             state.searchedVideoList = action.payload;
+       },
+       addChannelDetails:(state, action) => {
+        state.channelVideoList = action.payload;
+          
+       },
+       addVideoDetails:(state, action) => {
+        state.statVideoDetails = action.payload;
+          
+       },
+       addSubscriberDetails:(state, action) => {
+        state.statSubscriberDetails = action.payload;
        }
     }
 }
 
 )
-export const {addYoutubeMovie , addSearchedVideos} = youtubeVideoSlice.actions;
+export const {addYoutubeMovie , addSearchedVideos , addChannelDetails , addVideoDetails, addSubscriberDetails} = youtubeVideoSlice.actions;
 export default youtubeVideoSlice.reducer;
