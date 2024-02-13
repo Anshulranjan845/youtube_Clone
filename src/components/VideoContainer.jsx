@@ -7,17 +7,18 @@ import Shimmer from '../utils/Shimmer';
 
 
 const VideoContainer = () => {
+  const videos = useSelector(store => store.youtube?.addYoutubeVideo);
 
     useYoutubeVideo();
 
-   const videos = useSelector(store => store.youtube?.addYoutubeVideo);
+   
 
    if(!videos) return <Shimmer />;
-   console.log(videos);
+   
 
     
   return (
-    <div className='m-2 p-2 flex flex-wrap'>
+    <div className='m-2 p-2 flex flex-wrap -z-20'>
     { 
       
         videos.map((video)=>(

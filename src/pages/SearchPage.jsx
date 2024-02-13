@@ -4,6 +4,7 @@ import useSearchVideos from '../hooks/useSearchVideos';
 import { useSelector } from 'react-redux';
 import SearchedVideo from '../components/SearchedVideo';
 import ButtonList from '../components/ButtonList';
+import Shimmer from '../utils/Shimmer';
 
 const SearchPage = () => {
      
@@ -12,7 +13,7 @@ const SearchPage = () => {
      useSearchVideos(queryText);
      const searchResult =  useSelector(store=>store.youtube?.searchedVideoList);
       // console.log(searchResult);
-    if(!searchResult) return <h1>Fetching...</h1>
+    if(!searchResult) return <Shimmer/>
 
 
     return (
@@ -22,7 +23,7 @@ const SearchPage = () => {
     {
   
       searchResult.map(search=>
-        <Link key={search.id.videoId} to={"/watch?v="+search.id.videoId}>
+        <Link key={search?.id?.videoId} to={"/watch?v="+search?.id?.videoId}>
         <SearchedVideo info={search} />
         </Link>)
       

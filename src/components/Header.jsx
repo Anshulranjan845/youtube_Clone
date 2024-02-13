@@ -16,7 +16,6 @@ const Header = () => {
 
   const [inputValue, setInputValue] = useState('');
   const[isshowing , setIsshowing] = useState(false);
-  const [query , setQuery]= useState("");
   const dispatch = useDispatch();
   const suggested = useSelector(store=>store.Suggestion);
   const suggestedArray = useSelector(store=>store.Suggestion?.inputArr);
@@ -75,8 +74,8 @@ const Header = () => {
           X
         </span>
       )}
-      {inputValue &&<div>
-      {isshowing&&<ul className="absolute top-12 left-3 bg-white w-[83%] pl-2 px-[2px] text-md py-[20px] z-999 border boder-gray-200 rounded-lg">
+      {inputValue &&<div className='flex'>
+      {isshowing&&<ul className="absolute flex flex-col top-12 left-3 bg-white w-[83%] pl-2 px-[2px] text-md py-[20px] border border-gray-200 rounded-lg">
         {
            suggestedArray?.map((arr)=> (
           <Link key={arr} to={`/search?search_query=${arr}`}>

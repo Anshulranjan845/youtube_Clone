@@ -5,7 +5,6 @@ import useChannelDetail from '../hooks/useChannelDetail';
 const SearchedVideo = ({info}) => {
 
   const{id , snippet , kind  }= info;
-  const {videoId}=id;
   const{channelTitle , description, publishedAt,thumbnails,title ,channelId  }= snippet;
 
   const time = useTimestampdiff(publishedAt);
@@ -14,7 +13,7 @@ const SearchedVideo = ({info}) => {
 
   return (
     <>
-    <div className='flex flex-row p-4 m-4 gap-2 text-lg font-semibold'> 
+    <div className='flex flex-row p-4 m-4 gap-2 text-lg font-semibold relative -z-40'> 
        <div className='px-2 mx-2'>
        {
         ([kind] =="youtube#channel")? (<img src={thumbnails?.default
