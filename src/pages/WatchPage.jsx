@@ -13,7 +13,7 @@ const WatchPage = () => {
     const [livemessage, setLiveMessage] = useState(null);
     const dispatch = useDispatch();
     const toggleBar = useSelector(store=>store?.toggle?.toggleView);
-    let [searchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const paramDetail=searchParams.get("v")
     useVideoStats(paramDetail);
     const VideoStat = useSelector(store=>store.youtube?.statSubscriberDetails);
